@@ -11,9 +11,9 @@ const contenido_interactivo = d.querySelector(".nombre-interactivo");
 const modo_oscuro = d.querySelector(".oscuro");
 const card_servicio = d.querySelector(".card-servicios");
 
-d.addEventListener("click", (e) => {
-  console.log(e.target);
-});
+// d.addEventListener("click", (e) => {
+//   console.log(e.target===derecha);
+// });
 
 modo_oscuro.addEventListener("click", (e) => {
   d.body.classList.toggle("activo");
