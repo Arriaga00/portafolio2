@@ -12,7 +12,6 @@ const card_servicio = d.querySelector(".card-servicios");
 
 
 d.addEventListener("click", (e) => {
-  console.log(e.target===servicio);
   if(e.target===modo_oscuro){
     d.body.classList.toggle("activo");
   }
