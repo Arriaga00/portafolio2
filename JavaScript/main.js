@@ -1,52 +1,55 @@
 const d = document;
 const contenedor = d.querySelector(".esenas");
-const derecha = d.querySelector(".derecha");
-const izquierda = d.querySelector(".izquierda");
+const derechabtn = d.querySelector('.derechabtn')
+const izquierdabtn = d.querySelector(".izquierdabtn");
 const boton_acerca_de_mi = d.querySelector(".boton-lateral");
 const panel_lateral = d.querySelector(".panel");
-const panelActivo = d.querySelector(".panel.activo");
 const servicio = d.querySelector(".servicio");
 const proyecto = d.querySelector(".proyectos");
 const contenido_interactivo = d.querySelector(".nombre-interactivo");
 const modo_oscuro = d.querySelector(".oscuro");
 const card_servicio = d.querySelector(".card-servicios");
 
-// d.addEventListener("click", (e) => {
-//   console.log(e.target===derecha);
-// });
 
-modo_oscuro.addEventListener("click", (e) => {
-  d.body.classList.toggle("activo");
-});
+d.addEventListener("click", (e) => {
+  console.log(e.target===servicio);
+  if(e.target===modo_oscuro){
+    d.body.classList.toggle("activo");
+  }
 
-boton_acerca_de_mi.addEventListener("click", (e) => {
-  panel_lateral.classList.toggle("activo");
-});
+  if (e.target===boton_acerca_de_mi) {
+    panel_lateral.classList.toggle("activo");
+  }
 
-//Movimiento de derecha e izquierda de tarjetas
-derecha.addEventListener("click", () => {
-  contenido_interactivo.textContent = "Servicios";
-  contenedor.scrollLeft += 1750;
-});
+  if (e.target===derechabtn) {
+      contenido_interactivo.textContent = "Servicios";
+      contenedor.scrollLeft += 1750;
+  }
 
-izquierda.addEventListener("click", () => {
-  contenido_interactivo.textContent = "Proyectos";
-  contenedor.scrollLeft -= 1750;
-});
+  if (e.target===izquierdabtn) {
+    contenido_interactivo.textContent = "Proyectos";
+    contenedor.scrollLeft -= 1750;
+  }
 
-proyecto.addEventListener("click", () => {
-  contenido_interactivo.textContent = "Proyectos";
+
+  if (e.target===proyecto) {
+      contenido_interactivo.textContent = "Proyectos";
   setTimeout(() => {
     contenedor.scrollLeft -= 1750;
   }, 500);
+  }
+
+  if (e.target===servicio) {
+    contenido_interactivo.textContent = "Servicios";
+    setTimeout(() => {
+      contenedor.scrollLeft += 1750;
+    }, 500);
+  }
+
 });
 
-servicio.addEventListener("click", () => {
-  contenido_interactivo.textContent = "Servicios";
-  setTimeout(() => {
-    contenedor.scrollLeft += 1750;
-  }, 500);
-});
+
+
 
 let imgresponsive =
   "https://i.postimg.cc/pL2MFTSx/3d-casual-life-iphone-bitcoin.png";
@@ -64,7 +67,7 @@ let opt_img =
   "https://i.postimg.cc/9FN61V06/3d-casual-life-analytics-on-computer-screen.png";
 let opt_titulo = "Optimización del rendimiento de la página web";
 let opt_descripcion =
-  "Esto se refiere a hacer que el sitio web cargue más rápido mejorando el código, las imágenes y el almacenamiento en caché. Un sitio web rápido puede mejorar la experiencia del usuario y aumentar la cantidad de usuarios que se quedan o compran algo.";
+  "Optimizar el código, imágenes y caché acelera la carga del sitio web, mejorando la experiencia del usuario y potencialmente aumentando las visitas y compras.";
 
 function tarjetas(imgtxt, titulotxt, descripciontxt) {
   let card = d.createElement("div");
