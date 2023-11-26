@@ -369,7 +369,7 @@ body.activo .card{
 
 
 body.activo .card-proyectos{
-    box-shadow: 0 4px 8px 0 rgba(255,255,0,0.2), 0 6px 20px 0 rgba(255,255,0,0.19);
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
 }
 
 
@@ -463,7 +463,7 @@ body.activo .mapa{
 
 body.activo .formulario1{
     background-color: #222222;
-    box-shadow: 0 4px 8px 0 rgba(255,0,0,0.2), 0 6px 20px 0 rgba(255,0,0,0.19);
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
 }
 
 .titulo-formulario{
