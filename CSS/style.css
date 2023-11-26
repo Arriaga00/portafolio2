@@ -67,8 +67,10 @@ body.activo .navegacion nav a button:hover{
 }
 
 .panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     overflow:auto;
-    position: relative;
     word-wrap: break-word;
     margin-left: 1rem;
     position: fixed;
@@ -79,7 +81,7 @@ body.activo .navegacion nav a button:hover{
     padding: 2rem;
     top: 30px;
     bottom: 30px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
     transition: transform .3s ease;
     transform: translate(-105%,0);
@@ -98,19 +100,25 @@ body.activo .panel{
 
 .panel h2{
     text-align: center;
-    padding-top: 11rem;
-    padding-bottom: 2rem;
+    padding-top: 9rem;
+    padding-bottom: .5rem;
     margin: 0;
 }
 
+.cv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-
+.cv a{
+    padding-top: 2rem;
+    width: 80%;
+}
 
 .descargarcv{
-    position: absolute;
-    right: 140px;
-    bottom: 40px;
-    width: 59%;
+    width: 100%;
     height: 6vh;
     background-color: red;
     color: white;
@@ -121,6 +129,7 @@ body.activo .panel{
     border: solid 1px red;
     cursor: pointer;
     transition: all .3s ease;
+    text-align: center;
 }
 
 .descargarcv:hover{
@@ -175,7 +184,6 @@ body.activo #oscuro:hover{
 
 
 .presentacion .img-principal img{
-    padding-left: 2rem;
     width: 20rem;
     height: 20rem;
     position: relative;
@@ -212,11 +220,19 @@ body.activo #oscuro:hover{
 
 .img-principal{
     padding-top: 9rem;
+    text-align: center;
+}
+
+.img-principal h2{
+    font-size: 2rem;
+    text-align: center;
 }
 
 .frontend{
     text-align: center;
+    font-weight: 600;
     margin-bottom: 0;
+    text-align: center;
 }
 
 .presentacion2{
@@ -231,7 +247,7 @@ body.activo #oscuro:hover{
 }
 
 .mision p{
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
     font-weight: 500;
     animation: letras 1.5s forwards;
