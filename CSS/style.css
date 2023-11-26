@@ -67,6 +67,7 @@ body.activo .navegacion nav a button:hover{
 }
 
 .panel{
+    overflow:auto;
     position: relative;
     word-wrap: break-word;
     margin-left: 1rem;
@@ -97,7 +98,9 @@ body.activo .panel{
 
 .panel h2{
     text-align: center;
-    margin-top: 11rem;
+    padding-top: 11rem;
+    padding-bottom: 2rem;
+    margin: 0;
 }
 
 
@@ -208,7 +211,7 @@ body.activo #oscuro:hover{
 
 
 .img-principal{
-    margin-top: 9rem;
+    padding-top: 9rem;
 }
 
 .frontend{
@@ -450,13 +453,24 @@ body.activo .mapa{
     background-color: #222222;
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
 }
+.mapagoogle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+}
 
 .mapagoogle iframe{
     border-radius: 1rem;
+    width: 100%;
+    height: 60%;
 }
 
 .mapagoogle p{
-    padding-left: 1rem;
+
+    padding: 1rem 1rem;
 }
 
 
@@ -586,13 +600,16 @@ body.activo .enviar:hover{
 
 footer {
     box-sizing: border-box;
-    width: 99.2vw;
+    width: 100%;
 }
 
 .footer-bottom {
-    background-color: #000;
-    text-align: center;
+    background-color: #222222;
+    text-align:start;
     padding: 10px 0;
     color: #fff;
+    > p{
+        padding-left: 5rem;
+    }
 }
 
