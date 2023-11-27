@@ -9,16 +9,24 @@ const proyecto = d.querySelector(".proyectos");
 const contenido_interactivo = d.querySelector(".nombre-interactivo");
 const modo_oscuro = d.querySelector(".oscuro");
 const card_servicio = d.querySelector(".card-servicios");
-
+const transparencia =d.getElementById('overlay')
 
 d.addEventListener("click", (e) => {
   if(e.target===modo_oscuro){
     d.body.classList.toggle("activo");
   }
 
-  if (e.target===boton_acerca_de_mi) {
+   if (e.target===boton_acerca_de_mi) {
     panel_lateral.classList.toggle("activo");
+    transparencia.style.display = 'block'
   }
+
+  if (e.target===transparencia) {
+    transparencia.style.display = 'none'
+    panel_lateral.classList.toggle("activo")
+  }
+
+
 
   if (e.target===derechabtn) {
       contenido_interactivo.textContent = "Servicios";
