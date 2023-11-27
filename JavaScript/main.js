@@ -1,6 +1,6 @@
 const d = document;
 const contenedor = d.querySelector(".esenas");
-const derechabtn = d.querySelector('.derechabtn')
+const derechabtn = d.querySelector(".derechabtn");
 const izquierdabtn = d.querySelector(".izquierdabtn");
 const boton_acerca_de_mi = d.querySelector(".boton-lateral");
 const panel_lateral = d.querySelector(".panel");
@@ -9,54 +9,47 @@ const proyecto = d.querySelector(".proyectos");
 const contenido_interactivo = d.querySelector(".nombre-interactivo");
 const modo_oscuro = d.querySelector(".oscuro");
 const card_servicio = d.querySelector(".card-servicios");
-const transparencia =d.getElementById('overlay')
+const transparencia = d.getElementById("overlay");
 
 d.addEventListener("click", (e) => {
-  if(e.target===modo_oscuro){
+  if (e.target === modo_oscuro) {
     d.body.classList.toggle("activo");
   }
 
-   if (e.target===boton_acerca_de_mi) {
+  if (e.target === boton_acerca_de_mi) {
     panel_lateral.classList.toggle("activo");
-    transparencia.style.display = 'block'
+    transparencia.style.display = "block";
   }
 
-  if (e.target===transparencia) {
-    transparencia.style.display = 'none'
-    panel_lateral.classList.toggle("activo")
+  if (e.target === transparencia) {
+    transparencia.style.display = "none";
+    panel_lateral.classList.toggle("activo");
   }
 
-
-
-  if (e.target===derechabtn) {
-      contenido_interactivo.textContent = "Servicios";
-      contenedor.scrollLeft += 1750;
+  if (e.target === derechabtn) {
+    contenido_interactivo.textContent = "Servicios";
+    contenedor.scrollLeft += 1750;
   }
 
-  if (e.target===izquierdabtn) {
+  if (e.target === izquierdabtn) {
     contenido_interactivo.textContent = "Proyectos";
     contenedor.scrollLeft -= 1750;
   }
 
-
-  if (e.target===proyecto) {
-      contenido_interactivo.textContent = "Proyectos";
-  setTimeout(() => {
-    contenedor.scrollLeft -= 1750;
-  }, 500);
+  if (e.target === proyecto) {
+    contenido_interactivo.textContent = "Proyectos";
+    setTimeout(() => {
+      contenedor.scrollLeft -= 1750;
+    }, 500);
   }
 
-  if (e.target===servicio) {
+  if (e.target === servicio) {
     contenido_interactivo.textContent = "Servicios";
     setTimeout(() => {
       contenedor.scrollLeft += 1750;
     }, 500);
   }
-
 });
-
-
-
 
 let imgresponsive =
   "https://i.postimg.cc/pL2MFTSx/3d-casual-life-iphone-bitcoin.png";
