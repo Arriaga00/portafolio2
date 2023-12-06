@@ -11,6 +11,8 @@ const modo_oscuro = d.querySelector(".oscuro");
 const card_servicio = d.querySelector(".card-servicios");
 const transparencia = d.getElementById("overlay");
 
+//contador de direcciones de div esenas
+let contador=1
 d.addEventListener("click", (e) => {
   if (e.target === modo_oscuro) {
     d.body.classList.toggle("activo");
@@ -25,32 +27,57 @@ d.addEventListener("click", (e) => {
     transparencia.style.display = "none";
     panel_lateral.classList.toggle("activo");
   }
-
+  
   if (e.target === derechabtn) {
-    contenido_interactivo.textContent = "Servicios";
     contenedor.scrollLeft += 1750;
-  }
+    contador++
+      if (contador===2)   contenido_interactivo.textContent = 'Servicios';
+      if (contador===3)   contenido_interactivo.textContent = 'Conocimiento en';
+      if (contador>3)     contador = 3
+      console.log(contador)
+    }
+   
 
   if (e.target === izquierdabtn) {
-    contenido_interactivo.textContent = "Proyectos";
     contenedor.scrollLeft -= 1750;
+    contador--
+    if (contador===1)   contenido_interactivo.textContent = 'Proyectos';
+    if (contador===2)   contenido_interactivo.textContent = 'Servicios';
+    if (contador===3)   contenido_interactivo.textContent = 'Conocimiento en';
+    if (contador<1)     contador = 1
+    console.log(contador)
   }
 
   if (e.target === proyecto) {
     contenido_interactivo.textContent = "Proyectos";
     setTimeout(() => {
-      contenedor.scrollLeft -= 1750;
+      contenedor.scrollLeft -= 1750*2;
+      contador = 1
     }, 500);
   }
 
   if (e.target === servicio) {
-    contenido_interactivo.textContent = "Servicios";
-    setTimeout(() => {
-      contenedor.scrollLeft += 1750;
-    }, 500);
+    if (contador==3) {
+      contenido_interactivo.textContent = "Servicios";
+      setTimeout(() => {
+        contenedor.scrollLeft -= 1750;
+        contador = 2
+      }, 500);
+    }
+    else{
+      contenido_interactivo.textContent = "Servicios";
+      setTimeout(() => {
+        contador = 2
+        contenedor.scrollLeft += 1750;
+      }, 500);
+    }
+    
   }
 });
 
+
+
+//agregando a card servicios tarjetas e=generadas con Js
 let imgresponsive =
   "https://i.postimg.cc/pL2MFTSx/3d-casual-life-iphone-bitcoin.png";
 let titulo_responsive = "Implementación de diseño responsivo";
@@ -91,6 +118,47 @@ tarjetas(imgresponsive, titulo_responsive, descripcion_responsive);
 tarjetas(dep_img, dep_titulo, dep_descripcion);
 tarjetas(opt_img, opt_titulo, opt_descripcion);
 
+
+
+
+const card_conocimiento = d.querySelector('.card-conocimiento')
+let imgHtml = 'https://i.postimg.cc/vHpwXP8Z/html.png'
+
+let imgCss = 'https://i.postimg.cc/t4WQch7t/css.png'
+
+let imgJs = 'https://i.postimg.cc/kXVdQrmH/archivo-js.png'
+
+let imgreact = 'https://i.postimg.cc/5ytybsDC/react-icon-0.png'
+
+
+function tarjetas2(imgtxt, titulotxt, descripciontxt) {
+  let card = d.createElement("div");
+  card.classList.add("tarjetasConocimiento");
+  let img = d.createElement("img");
+  img.src = imgtxt;
+  img.alt = "img_targetas";
+  let titulo = d.createElement("h3");
+  titulo.textContent = titulotxt;
+  let descripcion = d.createElement("p");
+  descripcion.textContent = descripciontxt;
+
+  card.appendChild(img);
+  card.appendChild(titulo);
+  card.appendChild(descripcion);
+
+  card_conocimiento.appendChild(card);
+}
+
+tarjetas2(imgHtml)
+tarjetas2(imgCss)
+tarjetas2(imgJs)
+tarjetas2(imgreact)
+
+
+
+
+
+//funcion para enviar email a correo andresfelipearriaga@gmail.com sin validacion
 function enviarEmail() {
   d.addEventListener("submit", (e) => {
     e.preventDefault();
