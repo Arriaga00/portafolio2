@@ -11,11 +11,30 @@ const modo_oscuro = d.querySelector(".oscuro");
 const card_servicio = d.querySelector(".card-servicios");
 const transparencia = d.getElementById("overlay");
 
+
+
+//local storage 
+const temaGuardado = localStorage.getItem('tema');
+if (temaGuardado === 'activo') {
+  d.body.classList.add('activo');
+} else {
+  d.body.classList.remove('activo');
+}
+
+
+
 //contador de direcciones de div esenas
 let contador=1
 d.addEventListener("click", (e) => {
+
+  
   if (e.target === modo_oscuro) {
     d.body.classList.toggle("activo");
+    if (d.body.classList.contains("activo")) {
+      localStorage.setItem('tema', 'activo');
+    } else {
+      localStorage.setItem('tema', 'claro');
+    }
   }
 
   if (e.target === boton_acerca_de_mi) {
