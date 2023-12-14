@@ -27,7 +27,7 @@ if (temaGuardado === 'activo') {
 let contador=1
 d.addEventListener("click", (e) => {
 
-  
+      //local storage 
   if (e.target === modo_oscuro) {
     d.body.classList.toggle("activo");
     if (d.body.classList.contains("activo")) {
@@ -36,17 +36,17 @@ d.addEventListener("click", (e) => {
       localStorage.setItem('tema', 'claro');
     }
   }
-
+      //canva
   if (e.target === boton_acerca_de_mi) {
     panel_lateral.classList.toggle("activo");
     transparencia.style.display = "block";
   }
-
+    //canva2
   if (e.target === transparencia) {
     transparencia.style.display = "none";
     panel_lateral.classList.toggle("activo");
   }
-  
+      // derecha (btn)
   if (e.target === derechabtn) {
     contenedor.scrollLeft += 1750;
     contador++
@@ -56,7 +56,7 @@ d.addEventListener("click", (e) => {
       console.log(contador)
     }
    
-
+      //izquierda (btn)
   if (e.target === izquierdabtn) {
     contenedor.scrollLeft -= 1750;
     contador--
@@ -67,6 +67,7 @@ d.addEventListener("click", (e) => {
     console.log(contador)
   }
 
+    //interaccion de boton (nav)
   if (e.target === proyecto) {
     contenido_interactivo.textContent = "Proyectos";
     setTimeout(() => {
@@ -74,7 +75,8 @@ d.addEventListener("click", (e) => {
       contador = 1
     }, 500);
   }
-
+  
+  // iteracion de boton(nav)
   if (e.target === servicio) {
     if (contador==3) {
       contenido_interactivo.textContent = "Servicios";

@@ -11,6 +11,7 @@ body{
     background-color: #f5f5f5;
     transition: all .3s ease;
     font-family: 'Roboto', sans-serif;
+    text-align: justify;
 }
 
 body.activo{
@@ -95,8 +96,8 @@ body.activo .navegacion nav a button:hover{
     background-color:#f5f5f5 ;
     border-radius: 1rem;
     padding: 2rem;
-    top: 30px;
-    bottom: 30px;
+    top: 1rem;
+    bottom: 1rem;
     font-size: 1.1rem;
     font-weight: 500;
     transition: transform .3s ease;
@@ -116,7 +117,7 @@ body.activo .panel{
 
 .panel h2{
     text-align: center;
-    padding-top: 9rem;
+    /* padding-top: 9rem; */
     padding-bottom: .5rem;
     margin: 0;
 }
@@ -128,24 +129,24 @@ body.activo .panel{
     align-items: center;
 }
 
-.cv a{
-    padding-top: 2rem;
-    width: 80%;
-}
+
 
 .descargarcv{
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
     height: 6vh;
     background-color: red;
     color: white;
     border: none;
     margin-top: 1.5rem;
-    padding: 1rem 1rem;
     border-radius: .5rem;
     border: solid 1px red;
     cursor: pointer;
     transition: all .3s ease;
     text-align: center;
+    text-decoration: none;
 }
 
 .descargarcv:hover{
@@ -687,3 +688,173 @@ footer {
     }
 }
 
+
+@media (max-width: 1200px){
+
+
+
+
+    .navegacion nav a button{
+        font-size: 1rem;
+        font-weight: 500;
+        border: solid 1px transparent;
+        background-color: #f5f5f5;
+        border-radius: .2rem;
+        padding: 0 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .panel{
+        display: block;
+        position: fixed;
+        z-index: 999;
+        width: 40%;
+        background-color:#f5f5f5 ;
+        border-radius: 1rem;
+        padding: 2rem;
+        top: 1rem;
+        bottom: 1rem;
+        font-weight: 500;
+        transition: transform .3s ease;
+        transform: translate(-105%,0);
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        text-align:justify;
+        
+    }   
+
+    .panel h2{
+        padding-top: 5rem;
+    }
+
+
+    .cv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .izquierda{
+    display: none;
+    }
+    
+    .derecha{
+    display: none;
+    }
+    .contenido{
+        position:relative;
+    }
+
+    .esenas{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        border-radius: 1rem;
+        flex-wrap: wrap;
+        /* border: solid 2px; */
+    }
+
+    .card{
+        padding: 0 1rem;
+        box-sizing: border-box;
+        flex: 0 0 auto;
+        margin: 2rem 0;
+        width: 90%;
+        height: 50vh;
+        background-color: white;
+        border-radius: 1rem;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    .proyect i{
+        color: #a8a8a8;
+        font-size: 6rem;
+    }
+
+
+
+    .tarjetas{
+        background-color: #f5f5f5;
+        padding: 1rem 1rem;
+        width: 20%;
+        height: 88%;
+        border-radius: .5rem;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        transition: all .3s ease;
+        overflow:auto;
+        text-align: start;
+    
+        > img {
+            width: 100%;
+            height: 200px;
+        }
+    
+        > h3{
+            margin:0;
+        }
+    
+        > p {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .formulario{
+        display: flex;
+        justify-content:center ;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 2rem;
+        width: 100%;
+        height: auto;
+        background-color: #f5f5f5;
+        border-radius: 1rem;
+        gap: 40px;
+    }
+
+    .mapa{
+        width: 86%;
+        padding: 1rem;
+    }
+
+    .formulario1{
+        width: 90%;
+        background-color: white;
+        border-radius: 1rem;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        margin-bottom: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .titulo-formulario{
+        margin: 0;
+        padding-top: 2rem;
+        text-align: center;
+        font-family:'Bangers', cursive;
+        letter-spacing: 5px;
+    }
+
+
+    .nombres{
+        padding-top: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        gap: 40px;
+    }
+    
+
+    .footer-bottom{
+        > p {
+            padding-left: 1rem;
+        }
+    }
+}
+
+
+/* @media (max-width: 765px){
+    movil 
+} */
